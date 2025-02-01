@@ -8,3 +8,7 @@ class Collection(Model):
     owner: str
     twitter_username: str
     contracts: dict
+
+class Cars(Model):
+    name: str
+    description: str

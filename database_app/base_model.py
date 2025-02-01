@@ -36,6 +36,18 @@ class Model:
             cls.db.execute(sql)
         except Exception as e:
             logging.error(f"Error creating table {cls.__name__.lower()}: {e}")
+    
+    @classmethod
+    def drop_table(cls):
+        """Generate and execute SQL to drop table"""
+        try:
+
+            sql = f"""
+            DROP TABLE {cls.__name__.lower()}
+            """
+            cls.db.execute(sql)
+        except Exception as e:
+            logging.error(f"Error while drop table {cls.__name__.lower()}: {e}")
 
     @staticmethod
     def get_sql_type(field_type):

@@ -16,3 +16,16 @@ ETL:
     1.5) შევქმენი data_lake ფოლდერი რათა შევინახო მონაცემები
 
     2) შემდეგი არის ტრანსფორმაცია მონაცემების, გაფილტვრა, მნიშვნელობების მინიჭება იმათთვის რომელბსაც არ აქვთ მნიშვნელობები
+
+
+
+
+Task	                                                                Status
+✅ Extract Data from OpenSea API	                                        Done
+✅ Save Raw Data to JSON	                                                Done
+✅ Implement Custom ORM (Basic)	                                        Done
+✅ Load Data into PostgreSQL	                                            Done
+❗ Add Schema Management (Drop/Modify Tables)	                        Pending
+❗ Enhance ORM with update(), delete()	                                Pending
+❗ Optimize Bulk Insert	                                                Pending
+❗ Implement Persistent DB Connection	                                Pending

@@ -1,7 +1,9 @@
-from database_app.models import Collection
+from database_app.models import Collection, Cars
 
 # i created a table collection
 #Collection.create_table()
+
+#Cars.drop_table()
 
 # new_collection = Collection(
 #     collection="Art NFTs",
@@ -15,10 +17,10 @@ from database_app.models import Collection
 
 # new_collection.save()
 
-collections = Collection.all()
+# collections = Collection.all()
 
-for i in collections:
-    print(f"name: {i.name}")
+# for i in collections:
+#     print(f"name: {i.name}")
 
 
 
