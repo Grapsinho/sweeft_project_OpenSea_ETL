@@ -1,6 +1,10 @@
 import json
+import os
 
-DATA_LAKE_PATH = "data_lake/raw_data.json"
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
+DATA_LAKE_PATH = os.path.join(ROOT_DIR, "data_lake", "raw_data.json")
+CLEANED_DATA_PATH = os.path.join(ROOT_DIR, "data_lake", "cleaned_data.json")
 
 def load_raw_data():
     """Load the raw data from JSON file."""
@@ -33,25 +37,23 @@ def transform_collection_data(collections):
             "image_url": col.get("image_url", "static/images/default.jpg"),
             "owner": col.get("owner", "Unknown"),
             "twitter_username": col.get("twitter_username", "N/A"),
-            "contracts": col.get("contracts", {})
+            "contracts": json.dumps(col.get("contracts", {}))
         })
 
     return transformed_data
 
-def save_transformed_data(transformed_data, output_path="data_lake/cleaned_data.json"):
+def save_transformed_data(transformed_data, output_path=CLEANED_DATA_PATH):
     """Save cleaned data to a JSON file before loading into the database."""
+
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(transformed_data, f, indent=4)
     print(f"Transformed data saved to {output_path}")
 
 def transform_data():
     """Full transformation process: Load, filter, transform, and save data."""
-    raw_data = load_raw_data()  # Step 1: Load raw JSON
-    eth_collections = filter_ethereum_collections(raw_data)  # Step 2: Filter ETH collections
-    transformed_data = transform_collection_data(eth_collections)  # Step 3: Clean & transform
-    save_transformed_data(transformed_data)  # Step 4: Save cleaned data
-    return transformed_data
 
-if __name__ == "__main__":
-    transformed_collections = transform_data()
-    print(f"🚀 Transformed {len(transformed_collections)} Ethereum collections ready for database insertion!")
+    raw_data = load_raw_data()
+    eth_collections = filter_ethereum_collections(raw_data)
+    transformed_data = transform_collection_data(eth_collections)
+    save_transformed_data(transformed_data)
+    return transformed_data

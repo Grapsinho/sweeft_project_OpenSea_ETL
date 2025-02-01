@@ -7,9 +7,12 @@ from dotenv import load_dotenv
 load_dotenv()
 OPENSEA_API_KEY = os.getenv("OPENSEA_API_KEY")
 
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+DATA_LAKE_PATH = os.path.join(ROOT_DIR, "data_lake", "raw_data.json")
+
+
 HEADERS = {"Accept": "application/json", "X-API-KEY": OPENSEA_API_KEY}
 BASE_URL = "https://api.opensea.io/api/v2/collections"
-DATA_LAKE_PATH = "data_lake/raw_data.json"
 
 def fetch_collections(limit=100, max_pages=5):
     """
@@ -49,7 +52,3 @@ def fetch_collections(limit=100, max_pages=5):
         json.dump(collections, f, indent=4)
 
     return collections
-
-if __name__ == "__main__":
-    collections_data = fetch_collections()
-    print(f"Extracted {len(collections_data)} collections and saved raw data.")
