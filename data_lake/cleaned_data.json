@@ -1,191 +1,182 @@
 [
     {
-        "collection": "uhoopers-society-1-founders-collection",
-        "name": "UHOOPERS SOCIETY 1% FOUNDERS COLLECTION",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/ce1af4a6d96aaba91bcee946214cf9f6.gif?w=500&auto=format",
-        "owner": "0x78765702da9d5da3575ca5a14a65cdaaf4baa3f8",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xaf1b319608a899c25c0807be8e0101e16f81a625\", \"chain\": \"ethereum\"}]"
+        "collection": "crypsto-unique",
+        "name": "Crypsto Unique",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/32897114cc72e346e90d784cee8d2604.webp?w=500&auto=format",
+        "owner": "0xefa18a910a831c50b1958a3fb932077089f5ce6e",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x90be6099bf8987adfe93cf40839b8b53e666aa73\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "infinite-design",
-        "name": "Infinite Design",
-        "description": "",
-        "image_url": "",
-        "owner": "0x305c7c5bce5e42b837d6d223912baee06bb4b28b",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xb179fd255be3b6a865bea840d5a4ed376fdd9b03\", \"chain\": \"ethereum\"}]"
+        "collection": "the-muscle-girl",
+        "name": "The Muscle girl",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/dfc94d8adba2f7046355546e4fb14888.png?w=500&auto=format",
+        "owner": "0x5a00d88fb4f06d8266ba3c8ff8071d197985fe02",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xac4f3b5904bedd45a4bce7ee8efde41c33e1e9e4\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "luminous-currents",
-        "name": "Luminous Currents",
-        "description": "",
-        "image_url": "",
-        "owner": "0x305c7c5bce5e42b837d6d223912baee06bb4b28b",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x7ce27c5ea8ace48a5e84e7c664aac4bfdacf2018\", \"chain\": \"ethereum\"}]"
+        "collection": "power-and-rarity",
+        "name": "power and rarity",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/3931bae41d625e924319c372b266fc3d.jpg?w=500&auto=format",
+        "owner": "0x14644c53125edb7d2c6e66ec259fd5a406f54a00",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x1dcd26583c6cf3fc425b5203fc74db3689cbc2b0\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "symmetry-25",
-        "name": "Symmetry",
-        "description": "",
-        "image_url": "",
-        "owner": "0x305c7c5bce5e42b837d6d223912baee06bb4b28b",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x89a81513b5a8d486e38bdb367d412da149a68c4c\", \"chain\": \"ethereum\"}]"
+        "collection": "corona-mortis-1",
+        "name": "Corona mortis",
+        "description": "Four Paintings showing the signs for poison (skull) and bio hazard. These were subject to public uproar because they were hanging in a Swiss public prosecutor's office.",
+        "image_url": "https://i.seadn.io/s/raw/files/3cd55a022b6404144758618d0eb539b4.jpg?w=500&auto=format",
+        "owner": "0xd3e0dee1cf510991403a85f2dc0f9ada6a77effa",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xa5f950643f300c4bbbdb66796dfaf729c1f53a05\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "noircats",
-        "name": "Noir cats",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/972f4bd02742fef190eb5f94a4e03945.png?w=500&auto=format",
-        "owner": "0x528b221316204da0d8f396fafa46e1d64fd34dcb",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x9e657e662991d32d315092dee2c63a1adb313ae7\", \"chain\": \"ethereum\"}]"
+        "collection": "corona-mortis",
+        "name": "Corona mortis",
+        "description": "Four Paintings showing the signs for poison (skull) and bio hazard. These were subject to public uproar because they were hanging in a Swiss public prosecutor's office.",
+        "image_url": "https://i.seadn.io/s/raw/files/3cd55a022b6404144758618d0eb539b4.jpg?w=500&auto=format",
+        "owner": "0xd3e0dee1cf510991403a85f2dc0f9ada6a77effa",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x6bc95aa06efa1ceb0c0ceb68e35d19f567f6f27c\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "valentine-s-legacy-btc-enchantment",
-        "name": "Valentine's Legacy BTC Enchantment",
-        "description": "ENGLISH \n\ud83d\udc8e Valentine\u2019s Legacy: BTC Enchantment is a unique ultra-luxury NFT collection fusing Bitcoin\u2019s power, high-end digital art, and sensual elegance. Each 1/1 masterpiece embodies wealth, passion, and exclusivity.\n\ud83d\udd39 No copies, pure digital & physical luxury\n\ud83d\udd39 Handcrafted details: ruby, gold, celestial diamonds\n\ud83d\udd39 Ethereum ERC-721, forever on-chain\n\ud83d\udd39 VIP perks: gold-plated print, secret event, exclusive metaverse experience\n Own a symbol of eternal wealth and digital royalty! \n\nMAGYAR \n\ud83d\udc8e A Valentine\u2019s Legacy: BTC Enchantment egy ultra-luxus NFT kollekci\u00f3, amely \u00f6tv\u00f6zi a Bitcoin erej\u00e9t, pr\u00e9mium digit\u00e1lis m\u0171v\u00e9szetet \u00e9s \u00e9rz\u00e9ki eleganci\u00e1t. Minden 1/1 mesterm\u0171 a gazdags\u00e1g \u00e9s exkluzivit\u00e1s szimb\u00f3luma.\n\ud83d\udd39 Egyedi NFT, nincs m\u00e1solat\n\ud83d\udd39 K\u00e9zzel tervezett rubin, arany, mennyei gy\u00e9m\u00e1ntok\n\ud83d\udd39 Ethereum ERC-721, \u00f6r\u00f6k blokkl\u00e1ncon\n\ud83d\udd39 VIP el\u0151ny\u00f6k: aranyozott nyomat, titkos esem\u00e9ny, exkluz\u00edv metaverzum-\u00e9lm\u00e9ny\n Legyen ti\u00e9d az \u00f6r\u00f6k gazdags\u00e1g NFT-je! \n\n",
-        "image_url": "https://i.seadn.io/s/raw/files/c93c126e37d4d98d7ba3a33da9b4368e.png?w=500&auto=format",
-        "owner": "0xc060efdca773c844fb021d62c2b7fbd3f2b8e5b4",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x21fa8c3f0068d0b10bcaa10424fd40cc8bb442f0\", \"chain\": \"ethereum\"}]"
+        "collection": "belfo",
+        "name": "Belfo",
+        "description": "No description available.",
+        "image_url": "/static/images/default.jpg",
+        "owner": "0xbb153159495003ee634b898c2b30609eeebab2c2",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x61aa2a193ec287356426430126b23750a2f7b949\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "nobi-9",
-        "name": "Nobi",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/ba4fc25290a5b91b9300f48b827c6c4b.jpg?w=500&auto=format",
-        "owner": "0x1926202d32b2be8f59d3b03bb1e72f3ceb08f5bf",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xf23d83173db529c941a15691648b17033460f194\", \"chain\": \"ethereum\"}]"
+        "collection": "details-by-bodhideva",
+        "name": "Details by Bodhideva",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/491ef2c3750f8822b788502b376e224f.jpg?w=500&auto=format",
+        "owner": "0x5f5248b1f08680b3251b2a6f0b324a6b538a0cec",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x14533aaf4a062002787beed1a922e8f5fcc4a0c2\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "sunrise-in-the-city-1",
-        "name": "Sunrise in the city",
-        "description": "This is a painting of the rising sun on my street in Katowice, Poland.",
-        "image_url": "https://i.seadn.io/s/raw/files/ab90972c8848a7c7387136de871d7775.jpg?w=500&auto=format",
-        "owner": "0x2b34a8427476bb04ad22d29e3fda92c0ce267abf",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x9b520b07d9bbdea916d666f148fb488ba44749b1\", \"chain\": \"ethereum\"}]"
+        "collection": "decentralization13",
+        "name": "Decentralization",
+        "description": "(There is only one of these nfts in the world)\n\nTyrant governments should not dominate people.\nThe one who controls all the money in the world controls the people.\nSatan is afraid of decentralization!",
+        "image_url": "https://i.seadn.io/s/raw/files/b25c80b5d134a3d0f62bc3102fcda416.jpg?w=500&auto=format",
+        "owner": "0x05374ebbc828df9e3c6a989d7ef7c0c30a4349b9",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xdcbb2b942296cbbff6848b81de3dad0fb88cf72a\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "5-100",
-        "name": "5/100",
-        "description": "Just like meeting someone,\na piece of art is a once in a lifetime encounter.\nThe moment it catches your eye,\nit will be completed.\nWhat you feel will be the title of this art.\nThis art piece will be completed by you.\nThank you for knowing.\nThank you for feeling.\n\nSento \u301c\u5343\u4eba",
-        "image_url": "https://i.seadn.io/s/raw/files/913a87c06523521a5a8f11309956a9fb.jpg?w=500&auto=format",
-        "owner": "0xee316823f7b306df55cda9336092ae55df478c64",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x347f2af004be4782da13aabf5d11ed222beaef8f\", \"chain\": \"ethereum\"}]"
+        "collection": "tourmaline-3",
+        "name": "Tourmaline",
+        "description": "No description available.",
+        "image_url": "/static/images/default.jpg",
+        "owner": "0x0d2b6fdd67cb46cf0d7da34ba6e1c443fd383d85",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xabb23dd1e7ceedf2c80e0302b3d7a9b2afa24578\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "4-100",
-        "name": "4/100",
-        "description": "Just like meeting someone,\na piece of art is a once in a lifetime encounter.\nThe moment it catches your eye,\nit will be completed.\nWhat you feel will be the title of this art.\nThis art piece will be completed by you.\nThank you for knowing.\nThank you for feeling.\n\nSento \u301c\u5343\u4eba",
-        "image_url": "https://i.seadn.io/s/raw/files/f5bfed85719afe2eeaf7c9edf9f05a22.jpg?w=500&auto=format",
-        "owner": "0xee316823f7b306df55cda9336092ae55df478c64",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x2b292d4f3415b6cb70968191b2349e744c255f3f\", \"chain\": \"ethereum\"}]"
+        "collection": "tourmaline-2",
+        "name": "Tourmaline",
+        "description": "No description available.",
+        "image_url": "/static/images/default.jpg",
+        "owner": "0x0d2b6fdd67cb46cf0d7da34ba6e1c443fd383d85",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x07da07b9164121a61a529910a0fa36fd80f5bc30\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "3-100-1",
-        "name": "3/100",
-        "description": "Just like meeting someone,\na piece of art is a once in a lifetime encounter.\nThe moment it catches your eye,\nit will be completed.\nWhat you feel will be the title of this art.\nThis art piece will be completed by you.\nThank you for knowing.\nThank you for feeling.\n\nSento \u301c\u5343\u4eba",
-        "image_url": "https://i.seadn.io/s/raw/files/6dd69da0484ab109d12ef288cf157191.jpg?w=500&auto=format",
-        "owner": "0xee316823f7b306df55cda9336092ae55df478c64",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xdbe52723716042e44ab392f881437f6aa8af1b53\", \"chain\": \"ethereum\"}]"
+        "collection": "penguin-tokers",
+        "name": "Penguin Tokers",
+        "description": "Penguin Tokers \u2013 The Ultimate High-Flying, Globe-Trotting NFT Collection for Based Tokers!\n4,800 tuxedo-clad, blazed-out penguins chilling across the universe.\n\nThese sophisticated stoners are hitting up 40+ iconic locations, from the buzzing streets of New York, London, and Tokyo to the exotic vibes of Montevideo, Cairo, and San Jos\u00e9\u2014even reaching the depths of space and Mars!\n\nEach Based Toker brings their own unique style, blending 30 legendary cannabis strains into their high-flying adventures. Whether they\u2019re sparking up in Amsterdam, puffing in Paris, or rolling in Rio, every Toker is a rare gem in the NFT universe.\n\nWith customizable traits, exclusive rarity, and dope vibes! Rewards for Holders TBC\n",
+        "image_url": "https://i.seadn.io/s/raw/files/1133d5bdbbb0987fff3f9804c170896e.png?w=500&auto=format",
+        "owner": "0x0889d4cf284ec835b0051c1124908bf063b9ff95",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x3f388501da7215d7d2ea12a25b3a29f6ba0ea18c\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "word-50",
-        "name": "word",
-        "description": "",
-        "image_url": "",
-        "owner": "0xb48bd14924e63b9cb535ed1f2cfb8161ce81d613",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x551498f313a007ea30cb9dd110627844826db67e\", \"chain\": \"ethereum\"}]"
+        "collection": "outsider-9",
+        "name": "OUTSIDER",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/143778fbfa7ca75a7c68eb9e1f816e53.jpg?w=500&auto=format",
+        "owner": "0xa8c5d58cd557c3dc252d1838897de8950c446bbb",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x60be1c21d30c8ed9bf018c0b4a8a7a66af7563f5\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "002-100-1",
-        "name": "2/100",
-        "description": "Just like meeting someone,\na piece of art is a once in a lifetime encounter.\nThe moment it catches your eye,\nit will be completed.\nWhat you feel will be the title of this art.\nThis art piece will be completed by you.\nThank you for knowing.\nThank you for feeling.\n\nSento \u301c\u5343\u4eba",
-        "image_url": "https://i.seadn.io/s/raw/files/f49a28dca1cc84550db393b75f7cf257.jpg?w=500&auto=format",
-        "owner": "0xee316823f7b306df55cda9336092ae55df478c64",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x380f48800bf770e183d571b402c56dcecb3f218f\", \"chain\": \"ethereum\"}]"
+        "collection": "foxxyart",
+        "name": "FoxxyArt",
+        "description": "Discover a one-of-a-kind NFT collection featuring six stunning hand-painted artworks, created with acrylic and oil. Each piece is a testament to artistic craftsmanship, capturing the beauty of nature, human expressions, and breathtaking landscapes.\n",
+        "image_url": "https://i.seadn.io/s/raw/files/712addb4ce3c2713565da1b097684418.jpg?w=500&auto=format",
+        "owner": "0xd567b581a99e311268ca5355d8c36f96c8c09b8f",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x1d5403fa737da6d0387c4b85a7ab3c9a6904ddfa\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "milady-1278",
-        "name": "OCH Genesis Ring",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/df0ea8205ede57a2dc80ef9e2e69ed2e.gif?w=500&auto=format",
-        "owner": "0x6ce4b29f8d923338e5fd43bda1ac67caf6677d7d",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xd03ca2d0cb8ef9d6fc401cf7e8daf599d34a09d0\", \"chain\": \"ethereum\"}]"
+        "collection": "decentralization135435",
+        "name": "Decentralization",
+        "description": "(There is only one of these nfts in the world)\n\nTyrant governments should not dominate people.\nThe one who controls all the money in the world controls the people.\nSatan is afraid of decentralization!",
+        "image_url": "https://i.seadn.io/s/raw/files/74af70d19e8dcbadf6dc0d52870a8290.png?w=500&auto=format",
+        "owner": "0x05374ebbc828df9e3c6a989d7ef7c0c30a4349b9",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x7d5e0e4468d7c05e64920fb272deb6f5c3f2246f\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "bamboo-panda-club-1",
-        "name": "Bamboo Panda Club",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/f64ef211c8b7b7a32ef1de74bb87bc33.png?w=500&auto=format",
-        "owner": "0x1c48b972b0e9f4b094c309ca57927941a2e6e162",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0xa9f6b030cf648e338d32354d0b52e4de530ac96a\", \"chain\": \"ethereum\"}]"
+        "collection": "nightmare-68",
+        "name": "Nightmare",
+        "description": "I don't really understand this torture. I draw it out of my emotions and feelings of suffering.\nMy drawings before NOSINVX I used my real name before my art, so KANIXART was born.\nI respect my previous identity, and please follow me,\nIn the name of the reborn NOSINVX.",
+        "image_url": "https://i.seadn.io/s/raw/files/0a72243591b8bdaab88438bd99108936.png?w=500&auto=format",
+        "owner": "0x2144820b46b09a350e0f1fc873a1d28f3fadf43a",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xd9926e782cadbeeb017e61110ce703d7605b7f12\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "tom-s-digital-art",
-        "name": "Tom's Digital Art",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/57acc7c8e4519ab67416e363f4cece9f.jpg?w=500&auto=format",
-        "owner": "0x2affa3c64e203da73b7a07f1e7a996414c13dfca",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x98f22e14e6a9ec6324029af0e7c038db4d76d3f6\", \"chain\": \"ethereum\"}]"
+        "collection": "birds-of-a-feather-16",
+        "name": "Birds of a Feather",
+        "description": "BOAF was created to enhance the experience for members of The Cryptology Podcast on Twitch. NFT holders will gain access to exclusive content, special merchandise, and automatic entry into all giveaways. This initiative is designed to provide additional value and strengthen the community around the podcast.\n\n* NFT collection is 1 of 1 . No other Holder will Have same NFT ! This creates a market For Exclusivity !",
+        "image_url": "https://i.seadn.io/s/raw/files/a1660a5fb5ebccb28e6809fdf5ac5f65.png?w=500&auto=format",
+        "owner": "0x4a52f6767dca96a7753f94ef0240dd5c61e09889",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0xe957ac2b76a464365dbb6f3f91ddbc65a819f9fe\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "vishnu-shiva-the-cosmic-balance-unveiled",
-        "name": "Vishnu & Shiva: The Cosmic Balance Unveiled",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/1e24bd7ae28a9aa2309692c8a0ff986a.jpg?w=500&auto=format",
-        "owner": "0x9ca8e5450d00c06f7efa2ad36771f90452867122",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x74b0e6754a366d10ade823d4b5b34c3fe7fd1476\", \"chain\": \"ethereum\"}]"
+        "collection": "birds-of-a-feather-15",
+        "name": "Birds of a Feather",
+        "description": "No description available.",
+        "image_url": "/static/images/default.jpg",
+        "owner": "0x4a52f6767dca96a7753f94ef0240dd5c61e09889",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x39e5e5843e6ca4432fe243db28b0f55c6338ba4e\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "onigiri-artwork-collection-2025",
-        "name": "Onigiri Artwork Collection 2025",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/3e3146ace241b8ea878b925f57736afc.png?w=500&auto=format",
-        "owner": "0xc689c4e2298f5d0ee8118f46f0262421d17db813",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x9de944607c923ba57628fdb381f11e64460ddc38\", \"chain\": \"ethereum\"}]"
+        "collection": "milan-nart",
+        "name": "Milan nart",
+        "description": "No description available.",
+        "image_url": "/static/images/default.jpg",
+        "owner": "0xae99053a2a2918fb7373dc58c2df2ec08a52594c",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x4e3626cf2741c0e56131aadb2da62413d4f9e981\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "leedosun-2",
-        "name": "LEEDOSUN",
-        "description": "",
-        "image_url": "https://raw.seadn.io/files/d97a85269b2ada24fc7d3da44f6de6f2.bin",
-        "owner": "0x2805a4c19420e21bbc0a5d9d9b3721b10a212434",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x80d0dc7e4f87431abd387a2858a5eea9b12d267a\", \"chain\": \"ethereum\"}]"
+        "collection": "libertad-6",
+        "name": "Libertad",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/df7722087e24a8b73fdab60f9672389e.png?w=500&auto=format",
+        "owner": "0x01f9f7e5fdd7e04fc2d007bb7f95555ed816f5f6",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x762c11f18ff15a3e14781867a837c8be6f780d75\", \"chain\": \"ethereum\"}]"
     },
     {
-        "collection": "legendary-futuristic-nfts",
-        "name": "Legendary Futuristic NFTs",
-        "description": "Step into the future with Legendary Futuristic NFTs",
-        "image_url": "https://i.seadn.io/s/raw/files/7d57fcb5b49294e6f9d6b7a3602f4814.png?w=500&auto=format",
-        "owner": "0x0f7f465c5dbd7068a19ea8d65bf5f930aff98a1d",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x903772410ec4de5a70144793a2a61076bd926a25\", \"chain\": \"ethereum\"}]"
-    },
-    {
-        "collection": "turbo-toad-apes-first-edition",
-        "name": "Turbo Toad Apes - First Edition",
-        "description": "",
-        "image_url": "https://i.seadn.io/s/raw/files/f5228e702c511d66a967178d6dc0b959.jpg?w=500&auto=format",
-        "owner": "0xd2c59eee5fe1ec0ea7c3e377eadd1dcd082d3921",
-        "twitter_username": "",
-        "contracts": "[{\"address\": \"0x71dad3c447e85d9a80f53b4d0fd7be423e38c0d0\", \"chain\": \"ethereum\"}]"
+        "collection": "landshifterz-treegridtowerz",
+        "name": "LandShifterZ TreeGridTowerZ",
+        "description": "No description available.",
+        "image_url": "https://i.seadn.io/s/raw/files/91dca02e7ae34107022cff54eb2ddbb2.png?w=500&auto=format",
+        "owner": "0xecd0e1fe9eb0741fbbec6d4a51e18cb5f9f703dd",
+        "twitter_username": "N/A",
+        "contracts": "[{\"address\": \"0x8040a89832d5635ccd22a4a96f92ac43ed1b5d30\", \"chain\": \"ethereum\"}]"
     }
 ]

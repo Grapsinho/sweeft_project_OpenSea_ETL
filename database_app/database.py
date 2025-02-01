@@ -3,6 +3,8 @@ import psycopg2
 from dotenv import load_dotenv
 import os
 
+import logging
+
 # Load environment variables from the .env file
 load_dotenv()
 
@@ -14,6 +16,9 @@ db_user__var = os.environ.get('DB_USER')
 db_pass__var = os.environ.get('DB_PASS')
 
 class Database:
+
+    logging.basicConfig(level=logging.ERROR)
+
     def __init__(self, db_name=db_name__var, user=db_user__var, password=db_pass__var, host=db_host__var, port=db_port__var):
         """Initialize connection to PostgreSQL"""
         self.connection = psycopg2.connect(
@@ -22,16 +27,31 @@ class Database:
         self.cursor = self.connection.cursor()
 
     def execute(self, query, params=()):
-        """Execute a query with optional parameters"""
-        self.cursor.execute(query, params)
-        self.connection.commit()
+        """Execute INSERT, UPDATE, DELETE queries"""
+        try:
+            self.cursor.execute(query, params)
+            self.connection.commit()
+        except Exception as e:
+            logging.error(f"Database execution error: {e}")
+            self.connection.rollback()
+        finally:
+            self.close()
 
     def fetch(self, query, params=()):
         """Fetch data from the database"""
-        self.cursor.execute(query, params)
-        return self.cursor.fetchall()
+        try:
+            self.cursor.execute(query, params)
+            results = self.cursor.fetchall()
+            return results
+        except Exception as e:
+            logging.error(f"Database fetch error: {e}")
+            return []
+        finally:
+            self.close()
 
     def close(self):
         """Close the database connection"""
-        self.cursor.close()
-        self.connection.close()
+        if self.cursor:
+            self.cursor.close()
+        if self.connection:
+            self.connection.close()

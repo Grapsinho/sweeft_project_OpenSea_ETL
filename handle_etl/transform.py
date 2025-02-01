@@ -32,11 +32,11 @@ def transform_collection_data(collections):
     for col in collections:
         transformed_data.append({
             "collection": col.get("collection", "unknown"),
-            "name": col.get("name", "No Name"),
-            "description": col.get("description", "No description available."),
-            "image_url": col.get("image_url", "static/images/default.jpg"),
-            "owner": col.get("owner", "Unknown"),
-            "twitter_username": col.get("twitter_username", "N/A"),
+            "name": col.get("name") if col.get("name") else "No Name",
+            "description": col.get("description") if col.get("description") else "No description available.",
+            "image_url": col.get("image_url") if col.get("image_url") else "/static/images/default.jpg",
+            "owner": col.get("owner") if col.get("owner") else "Unknown",
+            "twitter_username": col.get("twitter_username") if col.get("twitter_username") else "N/A",
             "contracts": json.dumps(col.get("contracts", {}))
         })
 

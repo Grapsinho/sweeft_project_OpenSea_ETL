@@ -15,20 +15,17 @@ from database_app.models import Collection
 
 # new_collection.save()
 
-collections = Collection.filter(limit=2, order_by="name", name__icontains="100")
+collections = Collection.all()
 
 for i in collections:
     print(f"name: {i.name}")
 
 
 
+# populate json files
+# load database
+
 # from handle_etl.etl_pipeline import run_etl
 
 # if __name__ == "__main__":
 #     run_etl()
-
-# all_coll = Collection.all()
-
-# for i in all_coll:
-#     print(f"name: {i.name}")
-#     print(f"chain: {i.contracts[0]["chain"]}")
