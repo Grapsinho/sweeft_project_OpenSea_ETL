@@ -1,13 +1,14 @@
 from .database import Database
 import logging
 
+logging.basicConfig(level=logging.ERROR)
 
 class QuerySet(list):
     def __init__(self, model, condition_str, values, objects):
         """
         :param model: The Model subclass (e.g. Collection)
-        :param condition_str: The SQL fragment for WHERE clause (e.g. "name = %s AND description ILIKE %s")
-        :param values: A list (or tuple) of values corresponding to the placeholders in condition_str.
+        :param condition_str: The SQL fragment for WHERE clause ("name = %s AND description ILIKE %s")
+        :param values: A list (or tuple) of values corresponding to the placeholders in condition_str (%Modern Art Collection%).
         :param objects: The list of model instances retrieved from the SELECT query.
         """
         super().__init__(objects)  # Initialize as a list with the fetched objects.
@@ -42,9 +43,15 @@ class QuerySet(list):
 
         ord_direction = "ASC"
 
-        if order_by_keyword[0] == "-":
+        field = order_by_keyword
+
+        if order_by_keyword.startswith("-"):
             ord_direction = "DESC"
-            order_by_keyword = order_by_keyword[1:]
+            field = order_by_keyword[1:]
+        
+        if field not in self.model.__annotations__:
+            logging.error(f"Invalid order_by field '{field}' for model {self.model.__name__.lower()}")
+            return None
 
         if self.condition_str:
             sql = f"""
@@ -63,7 +70,7 @@ class QuerySet(list):
             # clear the list
             self.clear()
 
-            return objects
+            return QuerySet(self.model, self.condition_str, self.values, objects)
         except Exception as e:
             logging.error(f"Error while ordering items in {self.model.__name__.lower()}: {e}")
 
@@ -92,14 +99,11 @@ class QuerySet(list):
             # clear the list
             self.clear()
 
-            return objects
+            return QuerySet(self.model, self.condition_str, self.values, objects)
         except Exception as e:
             logging.error(f"Error while ordering items in {self.model.__name__.lower()}: {e}")
 
-    def update(
-        self,     
-        **fields
-    ):
+    def update(self, **fields):
         """
         Update all records or records based on some conditions.
         """
@@ -107,46 +111,44 @@ class QuerySet(list):
         if not fields:
             return logging.error(f"Please provide key, value to update records")
         
-        set_values = []
+        table_name = self.model.__name__.lower()
+
+        set_clauses = []
+        parameters = []
 
         for key, value in fields.items():
+            if key not in self.model.__annotations__:
+                logging.error(f"'{key}' is not a valid field in {table_name}")
+                return
+            # Use a placeholder for each value.
+            set_clauses.append(f"{key} = %s")
+            parameters.append(value)
 
-            if key not in self.model.__annotations__.keys():
-                return logging.error(f"{key} key not in model")
-
-            set_values.append(f"{key} = '{value}'")
-
-        set_key_value = ", ".join(set_values)
+        set_clause_str = ", ".join(set_clauses)
 
         if self.condition_str:
             sql = f"""
-            UPDATE {self.model.__name__.lower()}
-            SET {set_key_value}
-            WHERE {self.condition_str}
-
+                UPDATE {table_name}
+                SET {set_clause_str}
+                WHERE {self.condition_str}
             """
+            # Append the condition values after the new parameters.
+            parameters.extend(self.values)
         else:
-            # update all records
             sql = f"""
-
-            UPDATE {self.model.__name__.lower()}
-            SET {set_key_value}
-
+                UPDATE {table_name}
+                SET {set_clause_str}
             """
-        
-        try:
-            self.model.db.execute(sql, tuple(self.values))
 
-            # clear the list
+        try:
+            self.model.db.execute(sql, tuple(parameters))
             self.clear()
         except Exception as e:
-            logging.error(f"Error deleting records in {self.model.__name__.lower()}: {e}")
-
+            logging.error(f"Error updating records in {table_name}: {e}")
 
 
 class Model:
     db = Database()
-    logging.basicConfig(level=logging.ERROR)
 
     def __init__(self, **kwargs):
         """
@@ -290,20 +292,17 @@ class Model:
 
             sql = f"""
             INSERT INTO {cls.__name__.lower()} ({', '.join(fields)})
-            VALUES {', '.join(['(' + ', '.join(['%s'] * len(fields)) + ')' for _ in objects])}
+            VALUES ({', '.join(['%s'] * len(fields))})
             """
 
-            # VALUES (%s, %s, %s), (%s, %s, %s)
-
-            # Flatten values_list to pass as a tuple
-            flattened_values = [item for sublist in values_list for item in sublist]
+            flattened_values = [tuple(item) for item in values_list]
 
             # flattened values: flattened_values = [
             #    "Bored Ape", "NFT collection", "some_url",
             #    "CryptoPunks", "Another NFT", "another_url"
             #]
 
-            cls.db.execute(sql, flattened_values)
+            cls.db.executemany(sql, flattened_values)
         except Exception as e:
             logging.error(f"Error in bulk insert for {cls.__name__.lower()}: {e}")
 

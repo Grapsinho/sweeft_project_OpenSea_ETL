@@ -35,6 +35,15 @@ class Database:
             logging.error(f"Database execution error: {e}")
             self.connection.rollback()
 
+    def executemany(self, query, params_list):
+        try:
+            self.cursor.executemany(query, params_list)
+            self.connection.commit()
+        except psycopg2.Error as e:
+            logging.error(f"Database error: {e}")
+            self.connection.rollback()
+            raise
+
     def fetch(self, query, params=()):
         """Fetch data from the database"""
         try:

@@ -9,6 +9,7 @@ class Collection(Model):
     twitter_username: str
     contracts: dict
 
+# to test things
 class Cars(Model):
     name: str
     description: str
