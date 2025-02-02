@@ -25,7 +25,10 @@ Task	                                                                Status
 ✅ Save Raw Data to JSON	                                                Done
 ✅ Implement Custom ORM (Basic)	                                        Done
 ✅ Load Data into PostgreSQL	                                            Done
-❗ Add Schema Management (Drop/Modify Tables)	                        Pending
+✅ Add Schema Management (Drop/Modify Tables)	                        DONE
 ❗ Enhance ORM with update(), delete()	                                Pending
 ❗ Optimize Bulk Insert	                                                Pending
 ❗ Implement Persistent DB Connection	                                Pending
+
+
+გავარკვიო Implement Persistent DB Connection ეს რაარის.

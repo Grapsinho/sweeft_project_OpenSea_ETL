@@ -5,6 +5,10 @@ from database_app.models import Collection, Cars
 
 #Cars.drop_table()
 
+Collection.remove_columns("new_column")
+
+
+
 # new_collection = Collection(
 #     collection="Art NFTs",
 #     name="Modern Art Collection",

@@ -43,11 +43,53 @@ class Model:
         try:
 
             sql = f"""
-            DROP TABLE {cls.__name__.lower()}
+            DROP TABLE IF EXISTS {cls.__name__.lower()}
             """
             cls.db.execute(sql)
         except Exception as e:
             logging.error(f"Error while drop table {cls.__name__.lower()}: {e}")
+
+    @classmethod
+    def remove_columns(cls, *columns):
+        """Removes specified columns from the table."""
+        try:
+            if not columns:
+                logging.error("No columns specified for removal.")
+                return
+
+            alter_statements = [f"DROP COLUMN IF EXISTS {col}" for col in columns]
+            sql = f"""
+            ALTER TABLE {cls.__name__.lower()}
+            {', '.join(alter_statements)}
+            """
+            cls.db.execute(sql)
+        except Exception as e:
+            logging.error(f"Error removing columns from {cls.__name__.lower()}: {e}")
+
+    @classmethod
+    def modify_column_type(cls, column_name, new_type):
+        """Changes the data type of an existing column."""
+        try:
+            sql = f"""
+            ALTER TABLE {cls.__name__.lower()}
+            ALTER COLUMN {column_name} TYPE {new_type}
+            """
+            cls.db.execute(sql)
+        except Exception as e:
+            logging.error(f"Error modifying column {column_name} in {cls.__name__.lower()}: {e}")
+
+
+    @classmethod
+    def add_new_column(cls, column_name, data_type):
+        """Add new column."""
+        try:
+            sql = f"""
+            ALTER TABLE {cls.__name__.lower()}
+            ADD COLUMN {column_name} {data_type}
+            """
+            cls.db.execute(sql)
+        except Exception as e:
+            logging.error(f"Error adding column {column_name} in {cls.__name__.lower()}: {e}")
 
     @staticmethod
     def get_sql_type(field_type):
