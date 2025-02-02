@@ -1,6 +1,149 @@
 from .database import Database
 import logging
 
+
+class QuerySet(list):
+    def __init__(self, model, condition_str, values, objects):
+        """
+        :param model: The Model subclass (e.g. Collection)
+        :param condition_str: The SQL fragment for WHERE clause (e.g. "name = %s AND description ILIKE %s")
+        :param values: A list (or tuple) of values corresponding to the placeholders in condition_str.
+        :param objects: The list of model instances retrieved from the SELECT query.
+        """
+        super().__init__(objects)  # Initialize as a list with the fetched objects.
+        self.model = model
+        self.condition_str = condition_str  # Stored condition (without the 'WHERE' keyword)
+        self.values = values  # Stored values for the SQL placeholders
+
+    def delete(self):
+        """
+        Deletes all records from the database that match the stored condition.
+        If no condition is set (empty string), it deletes all records in the table.
+        """
+
+        if self.condition_str:
+            sql = f"DELETE FROM {self.model.__name__.lower()} WHERE {self.condition_str}"
+        else:
+            # delete all records
+            sql = f"DELETE FROM {self.model.__name__.lower()}"
+
+        try:
+            self.model.db.execute(sql, tuple(self.values))
+
+            # clear the list
+            self.clear()
+        except Exception as e:
+            logging.error(f"Error deleting records in {self.model.__name__.lower()}: {e}")
+    
+    def order_by(self, order_by_keyword):
+        """
+        Order objects by specific keyword.
+        """
+
+        ord_direction = "ASC"
+
+        if order_by_keyword[0] == "-":
+            ord_direction = "DESC"
+            order_by_keyword = order_by_keyword[1:]
+
+        if self.condition_str:
+            sql = f"""
+            SELECT * FROM {self.model.__name__.lower()}
+            WHERE {self.condition_str}
+            ORDER BY {order_by_keyword} {ord_direction}
+        """
+        else:
+            sql = f"SELECT * FROM {self.model.__name__.lower()} ORDER BY {order_by_keyword} {ord_direction}"
+
+        try:
+            results = self.model.db.fetch(sql, tuple(self.values))
+
+            objects = [self.model(**dict(zip(["id"] + list(self.model.__annotations__.keys()), row))) for row in results]
+
+            # clear the list
+            self.clear()
+
+            return objects
+        except Exception as e:
+            logging.error(f"Error while ordering items in {self.model.__name__.lower()}: {e}")
+
+    def limit(self, limit):
+        """
+        Limit objects.
+        """
+
+        if type(limit) is not int:
+            return logging.error("Please provide integer for limitation")
+
+        if self.condition_str:
+            sql = f"""
+            SELECT * FROM {self.model.__name__.lower()}
+            WHERE {self.condition_str}
+            LIMIT {limit}
+        """
+        else:
+            sql = f"SELECT * FROM {self.model.__name__.lower()} LIMIT {limit}"
+
+        try:
+            results = self.model.db.fetch(sql, tuple(self.values))
+
+            objects = [self.model(**dict(zip(["id"] + list(self.model.__annotations__.keys()), row))) for row in results]
+
+            # clear the list
+            self.clear()
+
+            return objects
+        except Exception as e:
+            logging.error(f"Error while ordering items in {self.model.__name__.lower()}: {e}")
+
+    def update(
+        self,     
+        **fields
+    ):
+        """
+        Update all records or records based on some conditions.
+        """
+
+        if not fields:
+            return logging.error(f"Please provide key, value to update records")
+        
+        set_values = []
+
+        for key, value in fields.items():
+
+            if key not in self.model.__annotations__.keys():
+                return logging.error(f"{key} key not in model")
+
+            set_values.append(f"{key} = '{value}'")
+
+        set_key_value = ", ".join(set_values)
+
+        if self.condition_str:
+            sql = f"""
+            UPDATE {self.model.__name__.lower()}
+            SET {set_key_value}
+            WHERE {self.condition_str}
+
+            """
+        else:
+            # update all records
+            sql = f"""
+
+            UPDATE {self.model.__name__.lower()}
+            SET {set_key_value}
+
+            """
+        
+        try:
+            self.model.db.execute(sql, tuple(self.values))
+
+            # clear the list
+            self.clear()
+        except Exception as e:
+            logging.error(f"Error deleting records in {self.model.__name__.lower()}: {e}")
+
+
+
 class Model:
     db = Database()
     logging.basicConfig(level=logging.ERROR)
@@ -77,7 +220,6 @@ class Model:
             cls.db.execute(sql)
         except Exception as e:
             logging.error(f"Error modifying column {column_name} in {cls.__name__.lower()}: {e}")
-
 
     @classmethod
     def add_new_column(cls, column_name, data_type):
@@ -166,17 +308,11 @@ class Model:
             logging.error(f"Error in bulk insert for {cls.__name__.lower()}: {e}")
 
     @classmethod
-    def all(cls, order_by=None, desc=False, limit=None):
+    def all(cls):
         """Retrieve all records from the table"""
 
         try:
             sql = f"SELECT * FROM {cls.__name__.lower()}"
-
-            if order_by and order_by in cls.__annotations__:
-                sql += f" ORDER BY {order_by} {'DESC' if desc else 'ASC'}"
-            
-            if limit and isinstance(limit, int) and limit > 0:
-                sql += f" LIMIT {limit}"
 
             results = cls.db.fetch(sql)
 
@@ -186,22 +322,22 @@ class Model:
             # converts list of tuple into a dict: dict(zip(...))
             # with cls we create collection instances from dicts.
 
-            return [cls(**dict(zip(["id"] + list(cls.__annotations__.keys()), row))) for row in results]
+            objects = [cls(**dict(zip(["id"] + list(cls.__annotations__.keys()), row))) for row in results]
+
+            return QuerySet(cls, "", "", objects)
     
         except Exception as e:
             logging.error(f"Error fetching all records from {cls.__name__.lower()}: {e}")
             return []
     
     @classmethod
-    def filter(cls, order_by=None, desc=False, limit=None, **conditions):
-        """Filter records based on conditions"""
-
+    def filter(cls, **conditions):
+        """Filter records based on conditions and return a QuerySet object."""
         try:
             condition_clauses = []
             values = []
 
             for key, value in conditions.items():
-
                 lower_dash_idx = key.find("__")
                 if lower_dash_idx == -1:
                     field = key
@@ -220,24 +356,23 @@ class Model:
                     condition_clauses.append(f"{field} = %s")
                     values.append(value)
 
+            # Join conditions using AND. (If no conditions are provided, condition_str will be empty.)
             condition_str = " AND ".join(condition_clauses)
 
-            sql = f"SELECT * FROM {cls.__name__.lower()} WHERE {condition_str}"
-
-            if order_by and order_by in cls.__annotations__:
-                sql += f" ORDER BY {order_by} {'DESC' if desc else 'ASC'}"
-
-            if limit and isinstance(limit, int) and limit > 0:
-                sql += f" LIMIT {limit}"
+            sql = f"SELECT * FROM {cls.__name__.lower()}"
+            if condition_str:
+                sql += f" WHERE {condition_str}"
 
             results = cls.db.fetch(sql, tuple(values))
-            
             objects = []
             for row in results:
+                # Create model instances from the fetched row.
                 data = dict(zip(["id"] + list(cls.__annotations__.keys()), row))
                 objects.append(cls(**data))
-            return objects
+            
+            # Return a QuerySet, which is a list with extra methods.
+            return QuerySet(cls, condition_str, values, objects)
                     
         except Exception as e:
             logging.error(f"Error filtering records in {cls.__name__.lower()}: {e}")
-            return []
+            return QuerySet(cls, "", [], [])

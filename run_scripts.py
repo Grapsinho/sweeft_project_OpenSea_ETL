@@ -3,10 +3,19 @@ from database_app.models import Collection, Cars
 # i created a table collection
 #Collection.create_table()
 
-#Cars.drop_table()
+# Collection.remove_columns("new_column")
 
-Collection.remove_columns("new_column")
+records = Collection.filter(owner="0x05374ebbc828df9e3c6a989d7ef7c0c30a4349b9").limit(2)
 
+for i in records:
+    print(i.name)
+    print(i.contracts)
+
+    print("\n")
+    print("---- next ----")
+
+# for i in collections_instance:
+#     print(i.name)
 
 
 # new_collection = Collection(
@@ -16,7 +25,7 @@ Collection.remove_columns("new_column")
 #     image_url="https://example.com/image.jpg",
 #     owner="0x123456...",
 #     twitter_username="nft_artist",
-#     contracts={"main": "0xabcdef..."}
+#     contracts="[{\"address\": \"0x123456...\", \"chain\": \"ethereum\"}]"
 # )
 
 # new_collection.save()
@@ -35,3 +44,9 @@ Collection.remove_columns("new_column")
 
 # if __name__ == "__main__":
 #     run_etl()
+
+
+
+#################### testing delete method ########################
+
+#print(Cars.all())

@@ -34,8 +34,6 @@ class Database:
         except Exception as e:
             logging.error(f"Database execution error: {e}")
             self.connection.rollback()
-        finally:
-            self.close()
 
     def fetch(self, query, params=()):
         """Fetch data from the database"""
@@ -46,8 +44,6 @@ class Database:
         except Exception as e:
             logging.error(f"Database fetch error: {e}")
             return []
-        finally:
-            self.close()
 
     def close(self):
         """Close the database connection"""
