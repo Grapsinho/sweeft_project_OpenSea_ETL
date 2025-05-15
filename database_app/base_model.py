@@ -366,9 +366,9 @@ class Model:
             objects = []
             for row in results:
                 # Create model instances from the fetched row.
-                data = dict(zip(["id"] + list(cls.__annotations__.keys()), row))
+                data = dict(zip(list(cls.__annotations__.keys()), row))
                 objects.append(cls(**data))
-            
+                
             # Return a QuerySet, which is a list with extra methods.
             return QuerySet(cls, condition_str, values, objects)
                     

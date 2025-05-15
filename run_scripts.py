@@ -5,14 +5,15 @@ from database_app.models import Collection, Cars
 
 # Collection.remove_columns("new_column")
 
-# records = Collection.filter(name__icontains="Modern Art Collection")
+records = Collection.filter(name__icontains="Modern Art Collection")
 
-# for i in records:
-#     print(i.name)
-#     print(i.contracts)
+for i in records:
+    print(i.id)
+    print(i.name)
+    print(i.contracts)
 
-#     print("\n")
-#     print("---- next ----")
+    print("\n")
+    print("---- next ----")
 
 # for i in collections_instance:
 #     print(i.name)
